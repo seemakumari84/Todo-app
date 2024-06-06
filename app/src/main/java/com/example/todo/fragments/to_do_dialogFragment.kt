@@ -1,13 +1,12 @@
-package com.example.kotlintodopractice.fragments
+package com.example.todo.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.kotlintodopractice.R
-import com.example.kotlintodopractice.databinding.FragmentToDoDialogBinding
-import com.example.kotlintodopractice.utils.model.ToDoData
+import com.example.todo.utils.model.ToDoData
+import com.example.todo.databinding.FragmentToDoDialogBinding
 import com.google.android.material.textfield.TextInputEditText
 
 
