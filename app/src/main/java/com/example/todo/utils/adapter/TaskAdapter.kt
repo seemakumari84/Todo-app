@@ -9,11 +9,13 @@ import com.example.todo.utils.model.ToDoData
 
 class TaskAdapter(private val list: MutableList<ToDoData>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
-    private  val TAG = "TaskAdapter"
-    private var listener:TaskAdapterInterface? = null
-    fun setListener(lisFragmenttener:TaskAdapterInterface){
+    private val TAG = "TaskAdapter"
+    private var listener: TaskAdapterInterface? = null
+
+    fun setListener(listener: TaskAdapterInterface) {
         this.listener = listener
     }
+
     class TaskViewHolder(val binding: FragmentEachTodoItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -27,13 +29,13 @@ class TaskAdapter(private val list: MutableList<ToDoData>) : RecyclerView.Adapte
             with(list[position]) {
                 binding.todoTask.text = this.task
 
-                Log.d(TAG, "onBindViewHolder: "+this)
+                Log.d(TAG, "onBindViewHolder: $this")
                 binding.editTask.setOnClickListener {
-                    listener?.onEditItemClicked(this , position)
+                    listener?.onEditItemClicked(this, position)
                 }
 
                 binding.deleteTask.setOnClickListener {
-                    listener?.onDeleteItemClicked(this , position)
+                    listener?.onDeleteItemClicked(this, position)
                 }
             }
         }
@@ -43,9 +45,8 @@ class TaskAdapter(private val list: MutableList<ToDoData>) : RecyclerView.Adapte
         return list.size
     }
 
-    interface TaskAdapterInterface{
-        fun onDeleteItemClicked(toDoData: ToDoData , position : Int)
-        fun onEditItemClicked(toDoData: ToDoData , position: Int)
+    interface TaskAdapterInterface {
+        fun onDeleteItemClicked(toDoData: ToDoData, position: Int)
+        fun onEditItemClicked(toDoData: ToDoData, position: Int)
     }
-
 }
