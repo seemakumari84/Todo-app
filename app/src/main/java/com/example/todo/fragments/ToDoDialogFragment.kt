@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.todo.utils.model.ToDoData
 import com.example.todo.databinding.FragmentToDoDialogBinding
+import com.example.todo.utils.model.ToDoData
 import com.google.android.material.textfield.TextInputEditText
 
 
 class ToDoDialogFragment : DialogFragment() {
 
-    private lateinit var binding:FragmentToDoDialogBinding
+    private lateinit var binding: FragmentToDoDialogBinding
     private var listener : OnDialogNextBtnClickListener? = null
     private var toDoData: ToDoData? = null
 
